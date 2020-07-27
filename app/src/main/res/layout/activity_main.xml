@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.appleobject.roomdemo.viewmodel.SubscriberViewModel" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@={myViewModel.inputName}"
+        android:inputType="textPersonName"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
+        android:hint="@string/subscriber_name"
+         />
+
+    <EditText
+        android:id="@+id/email_text"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:text="@={myViewModel.inputEmail}"
+        android:hint="@string/subscriber_s_email"
+        android:inputType="textEmailAddress" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/save_or_update_button"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:text="@={myViewModel.saveOrUpdateButtonText}"
+            android:onClick="@{()-> myViewModel.saveOrUpdate()}"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/clear_all_or_delete"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:text="@={myViewModel.deleteOrClearAllButtonText}"
+            android:onClick="@{()-> myViewModel.deleteOrClearAll()}"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="5dp"
+        android:id="@+id/subscriber_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+</layout>
