@@ -4,7 +4,7 @@
 
 This project utilize the Model-View View-Model Architecture.
 
-**Features**
+## Features
 
 - Coroutines
 - ROOM DB
@@ -17,6 +17,11 @@ This project utilize the Model-View View-Model Architecture.
 - LiveData
 - Activity
 
+## Libraries
+- [Kotlin Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
+- [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
+- [Lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle)
+- [Room](https://developer.android.com/jetpack/androidx/releases/room)
 
 ![pic1](screenshots/screenshot1.png)
 ![pic2](screenshots/screenshot2.png)
