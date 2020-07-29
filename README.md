@@ -24,3 +24,8 @@ This project utilize the Model-View View-Model Architecture.
 ![pic4](screenshots/screenshot4.png)
 ![pic5](screenshots/screenshot5.png)
 ![pic6](screenshots/screenshot6.png)
+
+
+### License
+
+This project is licensed under the Apache License 2.0 - See: http://www.apache.org/licenses/LICENSE-2.0.txt
