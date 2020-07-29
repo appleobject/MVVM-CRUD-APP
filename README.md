@@ -17,7 +17,7 @@ This project utilize the Model-View View-Model Architecture.
 - LiveData
 - Activity
 
-Screenshots
+
 ![pic1](screenshots/screenshot1.png)
 ![pic2](screenshots/screenshot2.png)
 ![pic3](screenshots/screenshot3.png)
