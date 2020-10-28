@@ -5,7 +5,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.appleobject.roomdemo.databinding.ActivityMainBinding
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         initRecyclerView()
-        subscriberViewModel.message.observe(this, Observer {
+        subscriberViewModel.message.observe(this, {
             it.getContentIfNotHandled()?.let {
                 Toast.makeText(this, it, Toast.LENGTH_LONG).show()
             }
@@ -50,13 +49,13 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         binding.subscriberRecyclerView.layoutManager = LinearLayoutManager(this)
         adapter =
-            MyRecyclerViewAdapter({ selectedItem: Subscriber -> listItemClicked(selectedItem) })
+            MyRecyclerViewAdapter { selectedItem: Subscriber -> listItemClicked(selectedItem) }
         binding.subscriberRecyclerView.adapter = adapter
         displayListOfSubscribers()
     }
 
     private fun displayListOfSubscribers() {
-        subscriberViewModel.subscribers.observe(this, Observer {
+        subscriberViewModel.subscribers.observe(this, {
             Log.i("MYTAG", it.toString())
             adapter.setList(it)
             adapter.notifyDataSetChanged()
